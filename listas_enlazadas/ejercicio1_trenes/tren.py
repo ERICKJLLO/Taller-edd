@@ -55,3 +55,22 @@ class Tren:
             nodo = nodo.next
 
         self.actual = nodo
+        
+    def acoplar(self, numero):
+        nuevo_vagon = Vagon(numero)
+        nuevo_nodo = Node(nuevo_vagon)
+
+        if self.actual is None:
+            self.vagones.head = nuevo_nodo
+            self.vagones.tail = nuevo_nodo
+            self.vagones.size = 1
+            self.actual = nuevo_nodo
+            return
+
+        nuevo_nodo.next = self.actual.next
+        self.actual.next = nuevo_nodo
+
+        if self.vagones.tail == self.actual:
+            self.vagones.tail = nuevo_nodo
+
+        self.vagones.size += 1
