@@ -48,3 +48,10 @@ class Tren:
         if self.actual == self.vagones.head:
             print("Ya está en el primer vagón.")
             return
+
+        nodo = self.vagones.head
+
+        while nodo.next != self.actual:
+            nodo = nodo.next
+
+        self.actual = nodo
