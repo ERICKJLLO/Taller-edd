@@ -30,7 +30,7 @@ class Tren:
 
         print()
 
-def siguiente(self):
+    def siguiente(self):
         if self.actual is None:
             print("El tren está vacío.")
             return
@@ -39,3 +39,12 @@ def siguiente(self):
             self.actual = self.actual.next
         else:
             print("Ya está en el último vagón.")
+    
+    def anterior(self):
+        if self.actual is None:
+            print("El tren está vacío.")
+            return
+
+        if self.actual == self.vagones.head:
+            print("Ya está en el primer vagón.")
+            return
