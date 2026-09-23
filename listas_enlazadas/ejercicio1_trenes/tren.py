@@ -74,3 +74,41 @@ class Tren:
             self.vagones.tail = nuevo_nodo
 
         self.vagones.size += 1
+        
+    def desacoplar_actual(self):
+        if self.actual is None:
+            print("El tren está vacío.")
+            return
+
+        if self.vagones.size == 1:
+            self.vagones.head = None
+            self.vagones.tail = None
+            self.vagones.size = 0
+            self.actual = None
+            return
+
+        nodo_eliminado = self.actual
+
+        if self.actual == self.vagones.head:
+            self.vagones.head = self.actual.next
+            self.actual = self.vagones.head
+            nodo_eliminado.next = None
+            self.vagones.size -= 1
+            return
+
+        anterior = self.vagones.head
+
+        while anterior.next != self.actual:
+            anterior = anterior.next
+
+        siguiente = self.actual.next
+        anterior.next = siguiente
+
+        if siguiente is not None:
+            self.actual = siguiente
+        else:
+            self.actual = anterior
+            self.vagones.tail = anterior
+
+        nodo_eliminado.next = None
+        self.vagones.size -= 1
