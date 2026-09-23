@@ -29,3 +29,13 @@ class Tren:
             nodo = nodo.next
 
         print()
+
+def siguiente(self):
+        if self.actual is None:
+            print("El tren está vacío.")
+            return
+
+        if self.actual.next is not None:
+            self.actual = self.actual.next
+        else:
+            print("Ya está en el último vagón.")
