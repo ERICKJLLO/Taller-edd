@@ -59,12 +59,15 @@ print("delete 6")
 editor.delete(6)
 editor.mostrar()
 
-print("print 5")
-editor.imprimir(5)
+print("print 4")
+editor.imprimir(4)
 
 print("undo")
 editor.undo()
 editor.mostrar()
+
+print("print 10")
+editor.imprimir(10)
 
 print("undo")
 editor.undo()
