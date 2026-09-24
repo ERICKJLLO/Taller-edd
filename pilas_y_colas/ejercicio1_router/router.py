@@ -32,3 +32,11 @@ class Router:
         self.paquetes.enqueue(nuevo_paquete)
 
         return True
+    
+    def forwardPacket(self):
+        if self.paquetes.is_empty():
+            return []
+
+        paquete = self.paquetes.dequeue()
+
+        return [paquete.source, paquete.destination, paquete.timestamp]
