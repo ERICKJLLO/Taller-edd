@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
 from slinkedlist import slinkedlist
 
 
@@ -48,3 +53,26 @@ def mostrar_desde_cabeza(cabeza):
         actual = actual.next
 
     print()
+
+
+lista = slinkedlist()
+
+lista.append(0)
+lista.append(3)
+lista.append(1)
+lista.append(0)
+lista.append(4)
+lista.append(5)
+lista.append(2)
+lista.append(0)
+lista.append(7)
+lista.append(8)
+lista.append(0)
+
+print("Lista original:")
+print(lista)
+
+cabeza = fusionar_segmentos(lista)
+
+print("Lista resultante:")
+mostrar_desde_cabeza(cabeza)
