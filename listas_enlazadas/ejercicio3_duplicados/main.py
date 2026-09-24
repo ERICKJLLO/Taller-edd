@@ -10,12 +10,16 @@ def eliminar_duplicados(lista):
     actual = lista.head
 
     while actual is not None:
+        print("Revisando valor:", actual.value)
+
         siguiente = actual.next
 
         while siguiente is not None:
             siguiente_nodo = siguiente.next
 
             if siguiente.value == actual.value:
+                print("Eliminando duplicado:", siguiente.value)
+
                 anterior = siguiente.prev
                 posterior = siguiente.next
 
@@ -39,7 +43,6 @@ def eliminar_duplicados(lista):
 
     if lista.tail is not None:
         lista.tail.next = None
-
 
 def mostrar_lista(lista):
     actual = lista.head
