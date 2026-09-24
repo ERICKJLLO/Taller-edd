@@ -39,3 +39,33 @@ editor.imprimir(5)
 print("undo")
 editor.undo()
 editor.mostrar()
+
+
+print()
+print("ESCENARIO 2")
+print()
+
+editor = Editor()
+
+print('append "Hola"')
+editor.append("Hola")
+editor.mostrar()
+
+print('append " mundo"')
+editor.append(" mundo")
+editor.mostrar()
+
+print("delete 6")
+editor.delete(6)
+editor.mostrar()
+
+print("print 5")
+editor.imprimir(5)
+
+print("undo")
+editor.undo()
+editor.mostrar()
+
+print("undo")
+editor.undo()
+editor.mostrar()
