@@ -33,6 +33,17 @@ cafeteria = Cafeteria()
 
 no_comieron, sobraron = cafeteria.procesar(estudiantes, sandwiches)
 
+print()
+print("ESCENARIO 3")
+print()
+
+estudiantes = [0, 0, 0, 1]
+sandwiches = [1, 1, 1, 1]
+
+cafeteria = Cafeteria()
+
+no_comieron, sobraron = cafeteria.procesar(estudiantes, sandwiches)
+
 print("Estudiantes:", estudiantes)
 print("Sandwiches:", sandwiches)
 print("Estudiantes que no pudieron comer:", no_comieron)
