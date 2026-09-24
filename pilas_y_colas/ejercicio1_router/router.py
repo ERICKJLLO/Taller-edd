@@ -54,3 +54,21 @@ class Router:
             self.paquetes.enqueue(paquete)
 
         return contador
+    
+    def mostrar(self):
+        if self.paquetes.is_empty():
+            print("Router vacío.")
+            return
+
+        cantidad = self.paquetes.len()
+
+        for i in range(cantidad):
+            paquete = self.paquetes.dequeue()
+            print(paquete, end="")
+
+            if i < cantidad - 1:
+                print(" -- ", end="")
+
+            self.paquetes.enqueue(paquete)
+
+        print()
