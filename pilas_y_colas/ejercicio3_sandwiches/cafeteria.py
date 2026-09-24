@@ -9,3 +9,30 @@ class Estudiante:
         self.reintentos = 2
 
 
+class Cafeteria:
+
+    def __init__(self):
+        self.estudiantes = Queue()
+        self.sandwiches = Stack()
+
+    def procesar(self, estudiantes, sandwiches):
+
+        for estudiante in estudiantes:
+            self.estudiantes.enqueue(Estudiante(estudiante))
+
+        for sandwich in sandwiches:
+            self.sandwiches.push(sandwich)
+
+        while not self.estudiantes.is_empty() and not self.sandwiches.is_empty():
+
+            estudiante = self.estudiantes.dequeue()
+
+            if estudiante.preferencia == self.sandwiches.top():
+                self.sandwiches.pop()
+            else:
+                estudiante.reintentos -= 1
+
+                if estudiante.reintentos > 0:
+                    self.estudiantes.enqueue(estudiante)
+
+        return self.estudiantes.len(), self.sandwiches.len()
