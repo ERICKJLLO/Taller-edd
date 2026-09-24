@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+
 from dlinkedlist import dlinkedlist
 
 
@@ -34,7 +39,7 @@ def eliminar_duplicados(lista):
 
     if lista.tail is not None:
         lista.tail.next = None
-        
+
 
 def mostrar_lista(lista):
     actual = lista.head
@@ -48,3 +53,45 @@ def mostrar_lista(lista):
         actual = actual.next
 
     print()
+
+
+print("ESCENARIO 1")
+
+lista = dlinkedlist()
+
+lista.append(10)
+lista.append(20)
+lista.append(10)
+lista.append(30)
+lista.append(20)
+lista.append(10)
+
+print("Lista original:")
+mostrar_lista(lista)
+
+eliminar_duplicados(lista)
+
+print("Lista resultante:")
+mostrar_lista(lista)
+
+
+print()
+print("ESCENARIO 2")
+
+lista = dlinkedlist()
+
+lista.append(5)
+lista.append(8)
+lista.append(5)
+lista.append(12)
+lista.append(8)
+lista.append(15)
+lista.append(12)
+
+print("Lista original:")
+mostrar_lista(lista)
+
+eliminar_duplicados(lista)
+
+print("Lista resultante:")
+mostrar_lista(lista)
