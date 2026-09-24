@@ -29,3 +29,15 @@ def rotar_hasta_maximo(lista):
         lista.head = ultimo
 
 
+def mostrar_lista(lista):
+    actual = lista.head
+
+    while actual is not None:
+        print(actual.value, end="")
+
+        if actual.next is not None:
+            print(" <--> ", end="")
+
+        actual = actual.next
+
+    print()
