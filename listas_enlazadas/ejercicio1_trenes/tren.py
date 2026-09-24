@@ -134,3 +134,23 @@ class Tren:
 
         if self.vagones.tail == nodo_actual:
             self.vagones.tail = anterior
+            
+    def mover_actual_final(self):
+        if self.actual is None:
+            print("El tren está vacío.")
+            return
+
+        if self.actual == self.vagones.tail:
+            print("El vagón ya está al final.")
+            return
+
+        nodo_actual = self.actual
+        anterior = self.vagones.head
+
+        while anterior.next != nodo_actual:
+            anterior = anterior.next
+
+        anterior.next = nodo_actual.next
+        nodo_actual.next = None
+        self.vagones.tail.next = nodo_actual
+        self.vagones.tail = nodo_actual
