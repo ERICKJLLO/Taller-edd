@@ -112,3 +112,25 @@ class Tren:
 
         nodo_eliminado.next = None
         self.vagones.size -= 1
+        
+    def mover_actual_inicio(self):
+        if self.actual is None:
+            print("El tren está vacío.")
+            return
+
+        if self.actual == self.vagones.head:
+            print("El vagón ya está al inicio.")
+            return
+
+        nodo_actual = self.actual
+        anterior = self.vagones.head
+
+        while anterior.next != nodo_actual:
+            anterior = anterior.next
+
+        anterior.next = nodo_actual.next
+        nodo_actual.next = self.vagones.head
+        self.vagones.head = nodo_actual
+
+        if self.vagones.tail == nodo_actual:
+            self.vagones.tail = anterior
