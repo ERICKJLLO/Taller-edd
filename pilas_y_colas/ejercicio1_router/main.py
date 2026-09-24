@@ -40,3 +40,29 @@ router.mostrar()
 
 
 print()
+print("ESCENARIO 2")
+print()
+
+router = Router(2)
+
+print("Agregando paquete 1:")
+print(router.addPacket(5, 50, 500))
+router.mostrar()
+
+print("Agregando paquete 2:")
+print(router.addPacket(6, 60, 600))
+router.mostrar()
+
+print("Cantidad destino 60 entre 500 y 700:")
+print(router.getCount(60, 500, 700))
+
+print("Procesando paquete más antiguo:")
+print(router.forwardPacket())
+router.mostrar()
+
+print("Procesando paquete más antiguo:")
+print(router.forwardPacket())
+router.mostrar()
+
+print("Procesando router vacío:")
+print(router.forwardPacket())
