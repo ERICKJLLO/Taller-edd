@@ -34,3 +34,17 @@ def eliminar_duplicados(lista):
 
     if lista.tail is not None:
         lista.tail.next = None
+        
+
+def mostrar_lista(lista):
+    actual = lista.head
+
+    while actual is not None:
+        print(actual.value, end="")
+
+        if actual.next is not None:
+            print(" <--> ", end="")
+
+        actual = actual.next
+
+    print()
