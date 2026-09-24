@@ -8,6 +8,7 @@ from dlinkedlist import dlinkedlist
 
 def rotar_hasta_maximo(lista):
     if lista.head is None:
+        print("La lista está vacía.")
         return
 
     maximo = lista.head
@@ -18,7 +19,10 @@ def rotar_hasta_maximo(lista):
             maximo = actual
         actual = actual.next
 
+    print("Valor máximo:", maximo.value)
+
     if maximo == lista.head:
+        print("El máximo ya está al frente.")
         return
 
     while lista.head != maximo:
@@ -33,7 +37,9 @@ def rotar_hasta_maximo(lista):
         lista.head.prev = ultimo
         lista.head = ultimo
 
+        print("Rotación:", lista)
 
+        
 def mostrar_lista(lista):
     actual = lista.head
 
