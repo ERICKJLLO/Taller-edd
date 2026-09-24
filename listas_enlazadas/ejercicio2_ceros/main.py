@@ -34,3 +34,17 @@ def fusionar_segmentos(lista):
     lista.size -= 1
 
     return lista.head
+
+
+def mostrar_desde_cabeza(cabeza):
+    actual = cabeza
+
+    while actual is not None:
+        print(actual.value, end="")
+
+        if actual.next is not None:
+            print(" --> ", end="")
+
+        actual = actual.next
+
+    print()
