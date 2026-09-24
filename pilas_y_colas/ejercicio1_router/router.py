@@ -7,7 +7,7 @@ class Router:
     def __init__(self, memoryLimit):
         self.memoryLimit = memoryLimit
         self.paquetes = Queue()
-        
+
     def addPacket(self, source, destination, timestamp):
         cantidad = self.paquetes.len()
 
@@ -32,7 +32,7 @@ class Router:
         self.paquetes.enqueue(nuevo_paquete)
 
         return True
-    
+
     def forwardPacket(self):
         if self.paquetes.is_empty():
             return []
@@ -40,7 +40,7 @@ class Router:
         paquete = self.paquetes.dequeue()
 
         return [paquete.source, paquete.destination, paquete.timestamp]
-    
+
     def getCount(self, destination, startTime, endTime):
         cantidad = self.paquetes.len()
         contador = 0
@@ -54,7 +54,7 @@ class Router:
             self.paquetes.enqueue(paquete)
 
         return contador
-    
+
     def mostrar(self):
         if self.paquetes.is_empty():
             print("Router vacío.")
