@@ -129,11 +129,12 @@ class Tren:
             anterior = anterior.next
 
         anterior.next = nodo_actual.next
+
+        if nodo_actual == self.vagones.tail:
+            self.vagones.tail = anterior
+
         nodo_actual.next = self.vagones.head
         self.vagones.head = nodo_actual
-
-        if self.vagones.tail == nodo_actual:
-            self.vagones.tail = anterior
 
     def mover_actual_final(self):
         if self.actual is None:
@@ -145,6 +146,14 @@ class Tren:
             return
 
         nodo_actual = self.actual
+
+        if self.actual == self.vagones.head:
+            self.vagones.head = self.actual.next
+            nodo_actual.next = None
+            self.vagones.tail.next = nodo_actual
+            self.vagones.tail = nodo_actual
+            return
+
         anterior = self.vagones.head
 
         while anterior.next != nodo_actual:
