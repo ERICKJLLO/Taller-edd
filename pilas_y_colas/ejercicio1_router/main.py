@@ -62,7 +62,7 @@ router.mostrar()
 
 print("Procesando paquete más antiguo:")
 print(router.forwardPacket())
-router.mostrar()
 
 print("Procesando router vacío:")
 print(router.forwardPacket())
+router.mostrar()
