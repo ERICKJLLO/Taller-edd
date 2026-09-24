@@ -39,7 +39,7 @@ class Tren:
             self.actual = self.actual.next
         else:
             print("Ya está en el último vagón.")
-    
+
     def anterior(self):
         if self.actual is None:
             print("El tren está vacío.")
@@ -55,7 +55,7 @@ class Tren:
             nodo = nodo.next
 
         self.actual = nodo
-        
+
     def acoplar(self, numero):
         nuevo_vagon = Vagon(numero)
         nuevo_nodo = Node(nuevo_vagon)
@@ -74,7 +74,7 @@ class Tren:
             self.vagones.tail = nuevo_nodo
 
         self.vagones.size += 1
-        
+
     def desacoplar_actual(self):
         if self.actual is None:
             print("El tren está vacío.")
@@ -112,7 +112,7 @@ class Tren:
 
         nodo_eliminado.next = None
         self.vagones.size -= 1
-        
+
     def mover_actual_inicio(self):
         if self.actual is None:
             print("El tren está vacío.")
@@ -134,7 +134,7 @@ class Tren:
 
         if self.vagones.tail == nodo_actual:
             self.vagones.tail = anterior
-            
+
     def mover_actual_final(self):
         if self.actual is None:
             print("El tren está vacío.")
