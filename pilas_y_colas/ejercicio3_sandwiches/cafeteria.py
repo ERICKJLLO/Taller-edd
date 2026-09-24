@@ -23,6 +23,8 @@ class Cafeteria:
         for sandwich in sandwiches:
             self.sandwiches.push(sandwich)
 
+        no_comieron = 0
+
         while not self.estudiantes.is_empty() and not self.sandwiches.is_empty():
 
             estudiante = self.estudiantes.dequeue()
@@ -34,5 +36,7 @@ class Cafeteria:
 
                 if estudiante.reintentos > 0:
                     self.estudiantes.enqueue(estudiante)
+                else:
+                    no_comieron += 1
 
-        return self.estudiantes.len(), self.sandwiches.len()
+        return no_comieron, self.sandwiches.len()
