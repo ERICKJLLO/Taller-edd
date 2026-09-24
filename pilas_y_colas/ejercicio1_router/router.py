@@ -40,3 +40,17 @@ class Router:
         paquete = self.paquetes.dequeue()
 
         return [paquete.source, paquete.destination, paquete.timestamp]
+    
+    def getCount(self, destination, startTime, endTime):
+        cantidad = self.paquetes.len()
+        contador = 0
+
+        for i in range(cantidad):
+            paquete = self.paquetes.dequeue()
+
+            if paquete.destination == destination and startTime <= paquete.timestamp <= endTime:
+                contador += 1
+
+            self.paquetes.enqueue(paquete)
+
+        return contador
